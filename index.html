@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento Online</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Agendar Horário</h1>
+
+      <form id="form-agendamento">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" required placeholder="Seu nome" />
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone/WhatsApp</label>
+          <input type="tel" id="telefone" required placeholder="(XX) XXXXX-XXXX" />
+        </div>
+
+        <div class="form-group">
+          <label for="servico">Serviço</label>
+            <select id="servico" required>
+                <option value="">Selecione o serviço</option>
+                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                <option value="Barba">Barba</option>
+                <option value="Combo (Cabelo + Barba)">Combo (Cabelo + Barba)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label for="data">Data</label>
+          <input type="date" id="data" required />
+        </div>
+
+        <div class="form-group">
+          <label for="hora">Horário</label>
+          <select id="hora" required>
+            <option value="">Selecione um horário</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+          </select>
+        </div>
+
+        <button type="submit" id="btn-agendar">Confirmar Agendamento</button>
+      </form>
+    </main>
+
+    <!-- Modal de Feedback -->
+    <div id="feedbackModal" class="modal">
+      <div class="modal-content">
+        <div id="loadingSpinner" class="spinner"></div>
+        <h3 id="modalTitle">Processando...</h3>
+        <p id="modalMessage">Por favor, aguarde.</p>
+        <button id="modalCloseBtn" class="hidden" style="margin-top: 1rem">
+          Fechar
+        </button>
+      </div>
+    </div>
+
+    <!-- App Logic -->
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
